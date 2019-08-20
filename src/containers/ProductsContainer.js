@@ -9,7 +9,6 @@ class ProductsContainer extends React.Component {
   searchInput: ''
 }
 
-
   handleSearchChange = (e) => {
     e.preventDefault()
     this.setState({

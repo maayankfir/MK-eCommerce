@@ -1,5 +1,6 @@
 import React from 'react'
-import { Select } from 'semantic-ui-react'
+import { Select, Grid} from 'semantic-ui-react'
+
 import ProductsContainer from './ProductsContainer'
 
 const brands = [
@@ -41,11 +42,18 @@ fetchProducts = (brand) => {
   render() {
     return (
       <div>
+      <Grid textAlign='center'>
+        <Grid.Row>
       <Select placeholder='Select a brand' options={brands} onChange={this.handleProductClick} />
+      </Grid.Row>
+
       {this.state.productsShowed === true ?
+        <Grid.Row>
         <ProductsContainer allProducts={this.state.allProducts}/>
+        </Grid.Row>
         : ''
       }
+    </Grid>
 
       </div>
     );

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Card, Button, Header, Modal, Icon, Image } from 'semantic-ui-react'
+import { Card, Button, Header, Modal, Icon, Image, Grid } from 'semantic-ui-react'
 import { Link, Redirect } from 'react-router-dom';
 
 class ProductsList extends Component {
-  state = { modalOpen: false }
+  state = {
+    modalOpen: false,
+   }
 
   handleOpen = () => this.setState({ modalOpen: true })
 
@@ -19,7 +21,6 @@ class ProductsList extends Component {
         open={this.state.modalOpen}
         onClose={this.handleClose}
         >
-
          <Modal.Content image>
            <Image wrapped size='medium' size='medium' src={this.props.item.image_link} />
            <Modal.Description>
@@ -51,7 +52,6 @@ class ProductsList extends Component {
             </a>
           </Card.Content>
         </Card>
-
       </div>
     );
   }
